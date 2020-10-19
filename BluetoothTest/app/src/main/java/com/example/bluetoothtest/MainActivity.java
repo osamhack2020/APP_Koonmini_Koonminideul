@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     void connectToBluetoothDevice(String selectedDeviceName) {
         mRemoteDevice = getDeviceFromBondedList(selectedDeviceName);
-        UUID uuid = UUID.fromString("000011001-0000-1000-8000-00805F9B34FB");
+        UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
 
         try {
             mSocket = mRemoteDevice.createRfcommSocketToServiceRecord(uuid);
