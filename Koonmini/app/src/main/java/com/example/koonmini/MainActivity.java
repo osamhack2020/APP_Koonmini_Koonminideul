@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     TextView textView2;
 
-    static Boolean locking = false;
-
-    String deviceId = null;
+    public static String deviceId = null;
+    public static Boolean locking = false;
+    public static String goOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
+
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -47,5 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 startService(intent2);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        textView2.setText(goOut);
     }
 }
