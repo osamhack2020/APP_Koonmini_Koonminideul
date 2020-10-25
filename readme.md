@@ -1,8 +1,5 @@
 # 팀 로고
-![Logo](./Koonmini_icon/배너.png)
-
-
-팀명 텍스트 및 팀명 로고 이미지 **(택1)**
+![Logo](./img/logo.png)
 
 ## 팀소개 및 프로잭트 설명 동영상
 [![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://www.youtube.com/watch?time_continue=117&v=LjX3eVQdIyk)
