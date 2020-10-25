@@ -43,12 +43,13 @@ public class LockActivity extends AppCompatActivity {
                 MainActivity.goOut=goOutData[index];
 
                 final String urlStr = "http://asak1104.p-e.kr:3000/";
-                new Thread(new Runnable() {
+                MainActivity.AsyncHttpConn(urlStr);
+                /*new Thread(new Runnable() {
                     @Override
                     public void run() {
                         MainActivity.request(urlStr);
                     }
-                }).start();
+                }).start();*/
 
                 MainActivity.locking = false;
                 finish();

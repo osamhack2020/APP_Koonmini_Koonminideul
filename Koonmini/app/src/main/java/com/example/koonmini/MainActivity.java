@@ -2,22 +2,23 @@ package com.example.koonmini;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import com.loopj.android.http.*;
+
+import cz.msebera.android.httpclient.Header;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
 
+        /*TelephonyManager mTelephony = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        if (mTelephony.getDeviceId() != null){
+            deviceId = mTelephony.getDeviceId();
+        } else {
+            deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        }*/
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -52,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final String urlStr = "http://asak1104.p-e.kr:3000/";
-                new Thread(new Runnable() {
+                AsyncHttpConn(urlStr);
+                /*new Thread(new Runnable() {
                     @Override
                     public void run() {
                         request(urlStr);
                     }
-                }).start();
+                }).start();*/
 
                 locking = true;
                 Intent intent = new Intent(getApplicationContext(), LockActivity.class);
@@ -99,6 +107,34 @@ public class MainActivity extends AppCompatActivity {
             Log.d("server connecting", ex.toString());
         }
 
+    }
+
+    static public void AsyncHttpConn(String urlStr){
+
+        RequestParams params = new RequestParams();
+        params.put("deviceId", deviceId);
+        params.put("locking", locking);
+        params.put("goOut", goOut);
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post(urlStr, params, new JsonHttpResponseHandler() {
+            @Override
+            public  void onStart() {
+
+            }
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+            }
+            @Override
+            public void onRetry(int retryNO){
+
+            }
+        });
     }
 
     @Override
