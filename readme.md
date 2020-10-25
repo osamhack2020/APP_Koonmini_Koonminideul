@@ -1,9 +1,9 @@
 # 팀 로고
 ![Logo](./img/logo.png)
 
-## 팀소개
+## 프로젝트 소개
  안녕하십니까. '군'인들이 쓰는 국'민'앱! 스마트폰 비대면 반납앱 군미니를 개발하고 있는 군미니들입니다.  
- 저희 팀은 ...
+ 저희 프로젝트는 ...
 
 ## 프로젝트 시연 동영상
 [![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://www.youtube.com/watch?time_continue=117&v=LjX3eVQdIyk)
@@ -20,8 +20,9 @@
   1.
   1.
 
-## 프로잭트 설명 (or 동영상)
+## 프로젝트의 기대효과
 
+## 추가할 기능
 
 ## 기능 설계
  -  발사믹, 카카오 오븐 등 본인이 편한 목업 프레임워크를 이용하여 제작 후 링크 
