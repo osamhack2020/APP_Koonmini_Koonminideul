@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "[gusdn159!]",
-    "database": "database_development",
+    "username": "",
+    "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
