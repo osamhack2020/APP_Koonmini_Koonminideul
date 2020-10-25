@@ -38,14 +38,23 @@ public class LockActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.locking = false;
 
                 int index = spinner.getSelectedItemPosition();
                 MainActivity.goOut=goOutData[index];
 
+                final String urlStr = "http://asak1104.p-e.kr:3000/";
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        MainActivity.request(urlStr);
+                    }
+                }).start();
+
+                MainActivity.locking = false;
                 finish();
                 Intent intent = new Intent(getApplicationContext(), LockService.class);
                 stopService(intent);
+
             }
         });
     }

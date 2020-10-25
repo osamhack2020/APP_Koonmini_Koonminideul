@@ -14,7 +14,7 @@
         android:layout_marginBottom="75dp"
         android:background="@drawable/buttondesign"
         android:fontFamily="casual"
-        android:text="Receive Phone"
+        android:text="Receive"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,10 +22,11 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:background="@drawable/buttondesign"
         android:layout_width="300dp"
         android:layout_height="25dp"
         android:layout_marginTop="75dp"
+        android:background="@drawable/buttondesign"
+        android:popupBackground="@drawable/buttondesign"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
