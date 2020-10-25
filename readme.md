@@ -1,5 +1,5 @@
 # 팀 로고
-![Logo](/Koonmini_icon/배너)
+![Logo](APP_Koonmini_Koonminideul/Koonmini_icon/배너.png)
 
 
 팀명 텍스트 및 팀명 로고 이미지 **(택1)**
