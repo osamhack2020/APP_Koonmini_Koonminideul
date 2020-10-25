@@ -8,6 +8,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+app.set('views', __dirname + '/views');
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -18,3 +23,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 module.exports = app;
+
+// http url
+console.log("http://asak1104.p-e.kr:3000/")
