@@ -1,5 +1,5 @@
 # 팀 로고
-![Logo](/issues/7#issue-729020779)
+![Logo](/Koonmini_icon/배너)
 
 
 팀명 텍스트 및 팀명 로고 이미지 **(택1)**
