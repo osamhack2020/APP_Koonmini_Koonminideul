@@ -16,7 +16,7 @@
   ![Locked](./img/Locked.png)
   1. 스피너를 클릭해서 출타여부를 선택한다.(없으면 그냥 놔둔다.)  
   ![Spinner](./img/Spinner.png)
-  1. Receive 버튼을 누르면 화면잠금이 풀린다. 
+  1. Receive 버튼을 누르면 화면잠금이 풀린다.  
     ![AppHome](./img/AppHome.png)
   
  - 관리자용 웹사이트(당직계통)
