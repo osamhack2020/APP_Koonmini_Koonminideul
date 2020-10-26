@@ -10,10 +10,14 @@
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)
-  1. 앱을 켠다.  ![AppHome](./img/AppHome.png)
-  1. Return 버튼을 누르면 반납완료되면서 잠금화면이 뜬다.  ![Locked](./img/Locked.png)
-  1. 스피너를 클릭해서 출타여부를 선택한다.(없으면 그냥 놔둔다.)  ![Spinner](./img/Spinner.png)
-  1. Receive 버튼을 누르면 화면잠금이 풀린다. ![AppHome](./img/AppHome.png)
+  1. 앱을 켠다.  
+  ![AppHome](./img/AppHome.png =200x600)
+  1. Return 버튼을 누르면 반납완료되면서 잠금화면이 뜬다.  
+  ![Locked](./img/Locked.png)
+  1. 스피너를 클릭해서 출타여부를 선택한다.(없으면 그냥 놔둔다.)  
+  ![Spinner](./img/Spinner.png)
+  1. Receive 버튼을 누르면 화면잠금이 풀린다. 
+  ![AppHome](./img/AppHome.png)
   
  - 관리자용 웹사이트(당직계통)
   1.
