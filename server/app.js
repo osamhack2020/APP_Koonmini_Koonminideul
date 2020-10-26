@@ -22,7 +22,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// app.use(function(req, res, next) {
+//     res.status(404).send('Sorry cant find that!');
+// });
+//
+// app.use(function (err, req, res, next) {
+//     console.error(err.stack)
+//     res.status(500).send('Something broke!')
+// });
+
 module.exports = app;
 
 // http url
-console.log("http://asak1104.p-e.kr:3000/")
+console.log("http://koonmini.kro.kr:3000/")
