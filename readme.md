@@ -51,6 +51,7 @@
 ### Android
  - 안드로이드 스튜디오 사용
  - java, xml
+ -android async http 라이브러리 사용
 
 ## 설치 안내 (Installation Process)
  - apk 파일 다운
