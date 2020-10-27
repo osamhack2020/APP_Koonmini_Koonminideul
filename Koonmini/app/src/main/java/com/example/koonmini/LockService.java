@@ -1,13 +1,15 @@
 package com.example.koonmini;
 
+import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.IBinder;
 
-public class LockService extends Service {
+import androidx.core.app.NotificationCompat;
 
-    LockReceiver mReceiver = null;
+public class LockService extends Service {
 
     public LockService() {
     }
@@ -21,33 +23,17 @@ public class LockService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mReceiver = new LockReceiver();
-        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(mReceiver, filter);
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {        super.onStartCommand(intent, flags, startId);
-
-        if(intent != null){
-            if(intent.getAction()==null){
-                if(mReceiver==null){
-                    mReceiver = new LockReceiver();
-                    IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
-                    registerReceiver(mReceiver, filter);
-                }
-            }
+        if(Build.VERSION.SDK_INT >= 26) {
+            Notification notification = new NotificationCompat.Builder(this, ALARM_SERVICE).setContentTitle("군미니").setContentText("잠금화면실행").build();
+            startForeground(7, notification);
         }
-        else return Service.START_STICKY;
-
-        return START_REDELIVER_INTENT;
+        Intent intent = new Intent(getApplicationContext(), LockActivity.class);
+        //intent.addFlags()
+        startActivity(intent);
     }
-
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mReceiver!=null)
-            unregisterReceiver(mReceiver);
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -42,7 +43,7 @@ public class LockActivity extends AppCompatActivity {
                 int index = spinner.getSelectedItemPosition();
                 MainActivity.goOut=goOutData[index];
 
-                final String urlStr = "http://asak1104.p-e.kr:3000/";
+                final String urlStr = "http://koonmini.kro.kr:3000/";
                 MainActivity.AsyncHttpConn(urlStr);
                 /*new Thread(new Runnable() {
                     @Override
@@ -53,8 +54,7 @@ public class LockActivity extends AppCompatActivity {
 
                 MainActivity.locking = false;
                 finish();
-                Intent intent = new Intent(getApplicationContext(), LockService.class);
-                stopService(intent);
+
 
             }
         });
@@ -71,4 +71,8 @@ public class LockActivity extends AppCompatActivity {
         activityManager.moveTaskToFront(getTaskId(), 0);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

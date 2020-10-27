@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String urlStr = "http://asak1104.p-e.kr:3000/";
+                final String urlStr = "http://koonmini.kro.kr:3000/";
                 AsyncHttpConn(urlStr);
                 /*new Thread(new Runnable() {
                     @Override
@@ -70,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 locking = true;
                 Intent intent = new Intent(getApplicationContext(), LockActivity.class);
                 startActivity(intent);
-                Intent intent2 = new Intent(getApplicationContext(), LockService.class);
-                startService(intent2);
 
             }
         });
