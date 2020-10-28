@@ -38,7 +38,7 @@
 * 권장: Google Chrome 버젼 77 이상
 
 ## 기술 스택 (Technique Used)
-![]{./img/Technique.png}
+![](./img/Technique.png)
 
 ## 설치 안내 (Installation Process)
  - apk 파일 다운
