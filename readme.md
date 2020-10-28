@@ -10,7 +10,7 @@
 [![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://www.youtube.com/watch?time_continue=117&v=LjX3eVQdIyk)
 
 ## 프로젝트 사용법 (Getting Started)
- - 사용자용 앱(병사)
+ - 사용자용 앱(병사)  
  ![AppHome](./img/AppHome.png) ![Locked](./img/Locked.png) ![Spinner](./img/Spinner.png) ![AppHome](./img/AppHome.png)
   1. 앱을 켠다.  
   1. Return 버튼을 누르면 반납완료되면서 잠금화면이 뜬다.  
