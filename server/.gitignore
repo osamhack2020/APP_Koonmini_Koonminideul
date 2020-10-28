@@ -62,4 +62,5 @@ typings/
 
 package-lock.json
 
-config/config.json
+server/config/
+config/
