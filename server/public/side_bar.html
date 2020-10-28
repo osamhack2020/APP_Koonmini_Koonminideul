@@ -1,67 +1,48 @@
-<!--for use this
-
-<div id="sidebar"></div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#sidebar").load("side_bar.html")
-    });
-</script>
--->
-
-
-
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
+<div class="sidebar">
     <div class="sidebar-logo">
-        <a href="index.html">
-            <img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+        <a href="/">
+            <img src="assets/img/logo.png" srcset="../assets/img/logo.png" class="img-fluid" alt="">
         </a>
     </div>
-    <div class="sidebar-inner slimscroll">
+    <div class="sidebar-inner">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+                    <a href="/"><i class="fas fa-columns"></i> <span> 한눈에 보기 </span></a>
                 </li>
                 <li>
-                    <a href="service-providers.html"><i class="fas fa-user-tie"></i> <span> Service Providers</span></a>
+                    <a href="/manage/user"><i class="fas fa-user-tie"></i> <span> 사용자 관리하기 </span></a>
                 </li>
                 <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i> <span> Settings</span></a>
+                    <a href="/add_user"><i class="fas fa-user-plus"></i> <span> 사용자 추가 </span></a>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-border-all"></i> <span> Application</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fas fa-border-all"></i> <span> 편의기능 </span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
-                        <li><a href="inbox.html">Email</a></li>
+                        <li><a href="chat.html"> 메신저 </a></li>
+                        <li><a href="calendar.html"> 달력 </a></li>
+                        <li><a href="inbox.html"> 이메일 </a></li>
                     </ul>
                 </li>
                 <li class="menu-title">
-                    <span>Pages</span>
+                    <span> Admin </span>
                 </li>
                 <li>
-                    <a href="admin-profile.html"><i class="fas fa-user-plus"></i> <span>Profile</span></a>
+                    <a href="settings.html"><i class="fas fa-cog"></i> <span> 설정 </span></a>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-user-lock"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fas fa-user-lock"></i> <span> 계정 관리 </span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="login.html"> Login </a></li>
-                        <li><a href="register.html"> Register </a></li>
-                        <li><a href="forgot-password.html"> Forgot Password </a></li>
-                        <li><a href="lock-screen.html"> Lock Screen </a></li>
+                        <li><a href="login.html"> 로그인 </a></li>
+                        <li><a href="register.html"> 회원가입 </a></li>
+                        <li><a href="forgot-password.html"> 비밀번호 찾기 </a></li>
+                        <li><a href="lock-screen.html"> 화면 잠금 </a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="users.html"><i class="fas fa-users"></i> <span>Users</span></a>
+                    <a href="users.html"><i class="fas fa-users"></i> <span> 관리자 명단 </span></a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-<!-- /Sidebar -->
-
-<script src="assets/js/admin.js"></script>

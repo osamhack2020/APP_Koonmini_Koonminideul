@@ -42,6 +42,14 @@ Version      : 1.0
 -----------------------*/
 
 @font-face {
+	font-family: 'MapoPeacefull';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+@font-face {
 	font-family: 'CircularStd';
 	font-style: normal;
 	font-weight: 400;
@@ -113,7 +121,7 @@ html {
 body {
 	background-color: #f8f9fa;
 	color: #333;
-	font-family: 'CircularStd', sans-serif;
+	font-family: 'MapoPeacefull', 'CircularStd', sans-serif;
 	font-size: 1rem;
 	height: 100%;
 	line-height: 1.5;
@@ -126,7 +134,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'CircularStd', sans-serif;
+	font-family: 'MapoPeacefull', 'CircularStd', sans-serif;
 	margin-top: 0;
 }
 
@@ -658,7 +666,7 @@ a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-	background-color: #e60073 !important;
+	background-color: #009688 !important;
 }
 
 .bg-success,
@@ -762,8 +770,8 @@ button.bg-danger:hover {
 .btn-primary.active,
 .btn-primary:active,
 .open>.dropdown-toggle.btn-primary {
-	background-color: #e60073;
-	border: 1px solid #e60073;
+	background-color: #009688;
+	border: 1px solid #009688;
 }
 
 .btn-primary.active.focus,
@@ -775,15 +783,15 @@ button.bg-danger:hover {
 .open>.dropdown-toggle.btn-primary.focus,
 .open>.dropdown-toggle.btn-primary:focus,
 .open>.dropdown-toggle.btn-primary:hover {
-	background-color: #e60073;
-	border: 1px solid #e60073;
+	background-color: #009688;
+	border: 1px solid #009688;
 }
 
 .btn-primary.active:not(:disabled):not(.disabled),
 .btn-primary:active:not(:disabled):not(.disabled),
 .show>.btn-primary.dropdown-toggle {
-	background-color: #e60073;
-	border-color: #e60073;
+	background-color: #009688;
+	border-color: #009688;
 	color: #fff;
 }
 
@@ -2035,7 +2043,7 @@ html.menu-opened body {
 }
 
 .sidebar-menu>ul>li.active>a:hover {
-	background-color: #e60073;
+	background-color: #009688;
 	color: #fff;
 }
 
