@@ -11,6 +11,7 @@
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
+ ![retrun](./img/return.gif) ![receive](./img/receive.gif)  
   1. 앱을 켠다.  
   ![AppHome](./img/AppHome.png)  
   1. Return 버튼을 누르면 반납완료되면서 잠금화면이 뜬다.  
