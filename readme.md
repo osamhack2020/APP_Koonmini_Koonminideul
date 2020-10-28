@@ -11,7 +11,7 @@
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
- ![return](./img/return.gif) ![receive](./img/receive.gif)  
+ ![return](./img/return2.gif) ![receive](./img/receive2.gif)  
   1. 앱을 켠다.  
   1. Return 버튼을 누르면 반납완료되면서 잠금화면이 뜬다.   
   1. 스피너를 클릭해서 출타여부를 선택한다.(없으면 그냥 놔둔다.)  
