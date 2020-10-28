@@ -20,8 +20,9 @@ const app = express();
 app.use(helmet())
 app.use(compression())
 
+// app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'html');
-nunjucks.configure('views', {
+nunjucks.configure('public', {
     express: app,
     watch: true,
 })
@@ -56,8 +57,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(function(req, res, next) {
