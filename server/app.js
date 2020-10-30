@@ -1,3 +1,4 @@
+/* Require module */
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -7,28 +8,43 @@ const dotenv = require('dotenv');
 const nunjucks = require('nunjucks');
 const helmet = require('helmet');
 const compression = require('compression');
+const passport = require('passport');
 
+
+/* Load .env config file */
 dotenv.config();
+
+
+/* Require router */
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const manageRouter = require('./routes/manage');
 const errorRouter = require('./routes/error');
-const add_userRouter = require('./routes/add_user');
+const addRouter = require('./routes/add');
+const accountRouter = require('./routes/account');
+const blankRouter = require('./routes/blank')
+const dataRouter = require('./routes/data');
 
-// const sequelize = require('./models/index').sequelize;
+
+/* Require sequelize models */
 const { sequelize } = require('./models')
+const passportConfig = require('./passport')
+
 
 const app = express();
 
+passportConfig();
 app.use(helmet())
 app.use(compression())
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.set('view engine', 'html');
-nunjucks.configure('public', {
+nunjucks.configure('views', {
     express: app,
     watch: true,
 })
+
 
 
 sequelize.sync({ force: false})
@@ -53,28 +69,44 @@ app.use(session({
         secure: false,
     },
     name: 'session-cookie',
-}))
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/manage', manageRouter);
 app.use('/error', errorRouter);
-app.use('/add_user', add_userRouter);
+app.use('/add', addRouter);
+app.use('/account', accountRouter);
+app.use('/blank-page', blankRouter);
+app.use('/data', dataRouter);
 
-app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use(function(req, res, next) {
-    res.status(404).redirect('/error/404');
+app.use((req, res, next) => {
+    // res.status(404).redirect('/error/404');
+    const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
+    error.status = 404;
+    next(error);
 });
 
-app.use(function (err, req, res, next) {
-    console.error(err.stack)
-    res.status(500).redirect('/error/500')
+app.use((err, req, res, next) => {
+    // console.error(err.stack);
+    // res.status(500).redirect('/error/500')
+    res.locals.message = err.message;
+    res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
+    res.status(err.status || 500);
+    res.render('error');
+    // res.render('error-500');
 });
 
 
 module.exports = app;
 
+
 // http url
+console.log("http://koonmini.kro.kr/");
 console.log("http://localhost:3000/")
