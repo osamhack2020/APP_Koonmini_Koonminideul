@@ -19,7 +19,7 @@ router
         });
     })
     .post('/login', isNotLoggedIn, (req, res, next) => {
-        console.log((req.body));
+        // console.log((req.body));
         passport.authenticate('local', (authError, admin, info) => {
             if(authError) {
                 console.error(authError);
@@ -47,7 +47,7 @@ router
         });
     })
     .post('/register/', isNotLoggedIn , async (req, res, next) => {
-        console.log(req.body);
+        // console.log(req.body);
         const { email, name, password } = req.body;
         try {
             const exAdmin = await Admin.findOne({ where: { email }});

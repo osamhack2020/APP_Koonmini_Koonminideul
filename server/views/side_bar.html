@@ -28,23 +28,26 @@
                     <span> Admin </span>
                 </li>
                 <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i> <span> 설정 </span></a>
+                    <a href="/blank-page"><i class="fas fa-cog"></i> <span> 설정 </span></a>
                 </li>
                 <li class="submenu">
                     <a href="#"><i class="fas fa-user-lock"></i> <span> 계정 관리 </span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         {% if loggedIn %}
                         <li><a href="/account/logout"> 로그아웃 </a></li>
+                        <li><a href="/"> 회원가입 </a></li>
+                        <li><a href="/"> 비밀번호 찾기 </a></li>
+                        <li><a href="/account/lock-screen"> 화면 잠금 </a></li>
                         {% else %}
                         <li><a href="/account/login"> 로그인 </a></li>
-                        {% endif %}
                         <li><a href="/account/register"> 회원가입 </a></li>
                         <li><a href="/account/forgot-password"> 비밀번호 찾기 </a></li>
-                        <li><a href="/account/lock-screen"> 화면 잠금 </a></li>
+                        <li><a href="/"> 화면 잠금 </a></li>
+                        {% endif %}
                     </ul>
                 </li>
                 <li>
-                    <a href="users.html"><i class="fas fa-users"></i> <span> 관리자 명단 </span></a>
+                    <a href="/manage/admin"><i class="fas fa-users"></i> <span> 관리자 명단 </span></a>
                 </li>
             </ul>
         </div>

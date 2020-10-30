@@ -6,15 +6,21 @@ const { User } = require('../models');
 /* GET, POST add/user page. */
 router
     .get('/user', (req, res, next) => {
-        res.render('add_user', {
-            title: '군미니 홈페이지',
-            arr_co: [1, 2, 3, 4],
-        });
+        if(req.isAuthenticated()) {
+            res.render('add_user', {
+                title: '군미니 홈페이지',
+                loggedIn: req.isAuthenticated(),
+                arr_co: [1, 2, 3, 4],
+            });
+        } else {
+            res.redirect('/');
+        }
     })
     .post('/user', (req, res, next) => {
         // console.log(req.body);
         // const rb = req.body;
         User.create({
+            admin: 0,
             name: req.body.name,
             service_number: req.body.service_number,
             company: req.body.company,

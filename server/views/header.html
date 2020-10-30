@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-left">
-        <a href="index.html" class="logo logo-small">
+        <a href="/" class="logo logo-small">
             <img src="/assets/img/logo-icon.png"  alt="Logo" width="30" height="30">
         </a>
     </div>
@@ -25,7 +25,7 @@
                 <div class="noti-content">
                     <ul class="notification-list">
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-01.jpg">
@@ -42,7 +42,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-02.jpg">
@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-03.jpg">
@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="User Image" src="/assets/img/provider/provider-04.jpg">
@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="User Image" src="/assets/img/provider/provider-05.jpg">
@@ -110,7 +110,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="User Image" src="/assets/img/provider/provider-06.jpg">
@@ -127,7 +127,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="admin-notification.html">
+                            <a href="/blank-page">
                                 <div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="User Image" src="/assets/img/provider/provider-07.jpg">
@@ -146,7 +146,7 @@
                     </ul>
                 </div>
                 <div class="topnav-dropdown-footer">
-                    <a href="admin-notification.html">모든 알림 보기</a>
+                    <a href="/blank-page">모든 알림 보기</a>
                 </div>
             </div>
         </li>
@@ -160,8 +160,12 @@
 						</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="admin-profile.html">계정 프로필</a>
-                <a class="dropdown-item" href="login.html">로그아웃</a>
+                <a class="dropdown-item" href="/blank-page">계정 프로필</a>
+                {% if loggedIn %}
+                <a class="dropdown-item" href="/account/logout">로그아웃</a>
+                {% else %}
+                <a class="dropdown-item" href="/account/login">로그인</a>
+                {% endif %}
             </div>
         </li>
         <!-- /User Menu -->

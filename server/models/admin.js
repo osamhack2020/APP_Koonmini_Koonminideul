@@ -40,13 +40,14 @@ module.exports =class Admin extends Sequelize.Model {
 
 /*
 mysql> desc admins;
-+-------------+--------------+------+-----+-------------------+-------------------+
-| Field       | Type         | Null | Key | Default           | Extra             |
-+-------------+--------------+------+-----+-------------------+-------------------+
-| id          | int          | NO   | PRI | NULL              | auto_increment    |
-| name        | varchar(20)  | NO   | UNI | NULL              |                   |
-| unit_number | int unsigned | NO   |     | NULL              |                   |
-| date        | datetime     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
-+-------------+--------------+------+-----+-------------------+-------------------+
-4 rows in set (0.00 sec)
++----------+--------------+------+-----+-------------------+-------------------+
+| Field    | Type         | Null | Key | Default           | Extra             |
++----------+--------------+------+-----+-------------------+-------------------+
+| id       | int          | NO   | PRI | NULL              | auto_increment    |
+| name     | varchar(20)  | NO   | UNI | NULL              |                   |
+| date     | datetime     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| email    | varchar(40)  | NO   | UNI | NULL              |                   |
+| password | varchar(100) | NO   |     | NULL              |                   |
++----------+--------------+------+-----+-------------------+-------------------+
+5 rows in set (0.00 sec)
 */

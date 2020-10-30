@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('blank-page', {
         title: '군미니 홈페이지',
+        loggedIn: req.isAuthenticated(),
     });
 });
 
