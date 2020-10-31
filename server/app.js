@@ -80,7 +80,7 @@ app.use('/manage', manageRouter);
 app.use('/error', errorRouter);
 app.use('/add', addRouter);
 app.use('/account', accountRouter);
-app.use('/blank-page', blankRouter);
+app.use('/blank', blankRouter);
 app.use('/data', dataRouter);
 
 

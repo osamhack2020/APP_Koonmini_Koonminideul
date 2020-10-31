@@ -12,7 +12,7 @@ router.get('/user', (req, res, next) => {
 
 /* GET manage/admin page. */
 router.get('/admin', (req, res, next) => {
-    res.render('manage_admin', {
+    res.render('manage_roll_call', {
         title: '군미니 홈페이지',
         loggedIn: req.isAuthenticated(),
     });
