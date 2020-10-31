@@ -9,7 +9,7 @@
 ## 프로젝트 시연 영상
 [시연영상](https://youtu.be/Sqp1qpT6wCY)
 ## 프로젝트 발표영상 (Presentation Video)
-[발표영상](https://youtu.be/RYGvtKITEl4)
+[발표영상](https://youtu.be/vrIwuv7tK8c)
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
