@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>{{title}}</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/css/admin.css">
+
+</head>
+
+<body>
+<div class="main-wrapper">
+
+    <!-- Header -->
+    {% include "header.html" %}
+    <!-- /Header -->
+
+    <!-- Sidebar -->
+    {% include "side_bar.html" %}
+    <!-- /Sidebar -->
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <div class="content container-fluid">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">사용자 추가</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">군미니들</a></li>
+                            <li class="breadcrumb-item active">등록 양식</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Header -->
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">아래 양식에 맞게 입력해주세요.</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/add/user" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="card-title">사용자 정보</h4>
+                                            <div class="form-group">
+                                                <label>이름:</label>
+                                                <input name="name" type="text" class="form-control" placeholder="군민이">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>군번:</label>
+                                                <input name="service_number" type="text" class="form-control" placeholder="00-00000000">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>소속 중대:</label>
+                                                <select name="company" class="select">
+                                                    <option>눌러서 선택해주세요</option>
+                                                    {% for co in arr_co %}
+                                                    <option value={{co}}중대>{{co}}중대</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        <div class="form-group">
+                                            <label>특이사항:</label>
+                                            <textarea name="comment" rows="5" cols="5" class="form-control" placeholder="메시지를 입력해주세요"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="card-title">단말기 정보</h4>
+                                        <div class="form-group">
+                                            <label>전화번호</label>
+                                            <input name="phone_number" type="text" class="form-control" placeholder="000-0000-0000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>비상연락망</label>
+                                            <input name="contact_number" type="text" class="form-control" placeholder="000-0000-0000">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>등록필증</label>
+                                            <input name="registration_number" type="text" class="form-control" placeholder="00-00-00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>DeviceID</label>
+                                            <input name="device_id" type="text" class="form-control" placeholder="군미니 앱을 확인해주세요">
+                                        </div>
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-primary">사용자 등록하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+</div>
+
+<!-- jQuery -->
+<script src="/assets/js/jquery-3.5.0.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Slimscroll JS -->
+<script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Datatables JS -->
+<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/datatables/datatables.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="/assets/js/select2.min.js"></script>
+
+<!-- Custom JS -->
+<script src="/assets/js/admin.js"></script>
+
+</body>
+
+</html>

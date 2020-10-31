@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>{{title}}</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="/assets/img/favicon.png">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/assets/css/admin.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+	
+		<div class="login-page">
+			<div class="login-body container">
+				<div class="loginbox">
+					<div class="login-right-wrap">
+						<div class="account-header">
+							<div class="account-logo text-center mb-4">
+								<a href="/">
+									<img src="/assets/img/logo.png" alt="" class="img-fluid">
+								</a>
+							</div>
+						</div>
+						<div class="login-header">
+							<h3>로그인  <span>군미니들</span></h3>
+							<p class="text-muted">군미니들을 이용해주세요!</p>
+						</div>
+						<form action="/account/login" method="post">
+							<div class="form-group">
+								<label class="control-label">아이디</label>
+								<input name="email" class="form-control" type="text" placeholder="아이디를 입력해주세요">
+							</div>
+							<div class="form-group mb-4">
+								<label class="control-label">비밀번호</label>
+								<input name="password" class="form-control" type="password" placeholder="비밀번호를 입력해주세요">
+							</div>
+							<div class="text-center">
+								<button class="btn btn-primary btn-block account-btn" type="submit">로그인</button>
+							</div>
+						</form>
+						
+								<div class="text-center forgotpass mt-4"><a href="forgot-password.html">비밀번호를 잊으셨나요?</a></div>
+								<div class="login-or">
+									<span class="or-line"></span>
+									<span class="span-or">or</span>
+								</div>
+								  
+								<!-- Social Login -->
+								<div class="social-login">
+									<span>계정 연동하기</span>
+									<a href="/blank-page" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="/blank-page" class="google"><i class="fab fa-google"></i></a>
+								</div>
+								<!-- /Social Login -->
+								
+								<div class="text-center dont-have">아직 회원이 아니신가요? <a href="/account/register">회원가입</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="/assets/js/jquery-3.5.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/assets/js/admin.js"></script>
+
+</body>
+
+</html>
