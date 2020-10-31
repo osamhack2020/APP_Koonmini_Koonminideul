@@ -23,17 +23,31 @@
 ```
 # 군미니의 깃허브를 clone 합니다. 
 $ git clone https://github.com/osamhack2020/APP_Koonmini_Koonminideul.git
+```
 
+```
 # 군미니 프로젝트 폴더로 이동 후 npm(Node.js package manager)을 설치합니다. 
 $ sudo apt install npm
+```
 
+```
 # 군미니 프로젝트의 server 폴더로 이동한 후, npm을 이용해 모듈을 다운받습니다.
 $ cd ./server
 $ npm i or npm install
+```
+
+```
+# 군미니 프로젝트는 .env(dotenv)모듈을 사용하여 비밀번호를 관리하기 때문에
+server 폴더 안에 .env 파일을 생성해 줍니다.
+$ touch .env
+```
 
 
 ```
-
+# 그 후 아래 설정을 해주면 끝이 납니다.
+COOKIE_SECRET=
+SEQUELIZE_PASSWORD=''
+```
 
   1. 사이트에 접속을 한다.
   1. 계정관리 메뉴에서 회원가입 페이지에 들어가 회원가입을 하고 로그인을 한다.  ![](./img/p5.png) ![](./img/p4.png)
