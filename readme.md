@@ -34,6 +34,15 @@ $ git clone https://github.com/osamhack2020/APP_Koonmini_Koonminideul.git
 ```
 
 ```
+# Node.js 기반의 서버이기 때문에 설치가 필요합니다.
+# 아래의 명령어들을 입력하면 설치가 진행됩니다.
+$ sudo apt-get update
+$ sudo apt-get install -y build-essential
+$ sudo apt-get install curl
+$ sudo apt-get install -y nodejs
+```
+
+```
 # 군미니 프로젝트 폴더로 이동 후 npm(Node.js package manager)을 설치합니다. 
 $ sudo apt install npm
 ```
@@ -55,6 +64,14 @@ $ touch .env
 # 그 후 .env에 아래 설정을 적어주면 됩니다.
 COOKIE_SECRET=원하시는 것
 SEQUELIZE_PASSWORD='원하시는 것'
+```
+
+```
+# 서버는 mysql과 sequelize를 사용합니다. sequelize는 npm에서 설치가 되지만
+# mysql이 설치되어 있지 않다면 아래의 명령어들을 입력해주시면 됩니다.
+$ sudo apt-get update
+$ sudo apt-get install -y mysql-server
+$ sudo mysql_secure_installation
 ```
 
 ```
