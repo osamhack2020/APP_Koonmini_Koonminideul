@@ -9,7 +9,7 @@
 ## 프로젝트 시연 영상
 [시연영상](https://youtu.be/Sqp1qpT6wCY)
 ## 프로젝트 발표영상 (Presentation Video)
-[발표영상](https://youtu.be/vrIwuv7tK8c)
+[발표영상](https://youtu.be/RYGvtKITEl4)
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
@@ -74,6 +74,25 @@ $ sudo apt-get install -y mysql-server
 $ sudo mysql_secure_installation
 ```
 
+```
+# mysql의 데이터베이스와 테이블 형식은 server/models/의 파일들의
+# 코드 밑 부분에 주석으로 쿼리 데이터 형식을 적어두었습니다.
+# ex) admins table
+
+```javascript
+/*
+mysql> desc admins;
++----------+--------------+------+-----+-------------------+-------------------+
+| Field    | Type         | Null | Key | Default           | Extra             |
++----------+--------------+------+-----+-------------------+-------------------+
+| id       | int          | NO   | PRI | NULL              | auto_increment    |
+| name     | varchar(20)  | NO   | UNI | NULL              |                   |
+| date     | datetime     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| email    | varchar(40)  | NO   | UNI | NULL              |                   |
+| password | varchar(100) | NO   |     | NULL              |                   |
++----------+--------------+------+-----+-------------------+-------------------+
+5 rows in set (0.00 sec)
+*/
 ```
 # 서버 실행은 아래의 코드로 진행 됩니다.
 $ npm start
