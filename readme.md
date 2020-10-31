@@ -18,6 +18,11 @@
   1. Return 버튼을 누르면 반납완료되면서 화면이 잠기게 된다.   
   1. 화면 상단의 드롭바를 클릭해서 출타여부를 선택한다.(해당사항이 없다면 그냥 놔둔다.)  
   1. Receive 버튼을 누르면 화면잠금이 풀린다.  
+  *다른 컴퓨터에서 서버를 열때에 다음 위치에서 URL을 수정해야합니다.
+  ```
+  Koonmini/app/src/main/java/com/example/koonmini/MainActivity
+Koonmini/app/src/main/java/com/example/koonmini/LockActivity
+```
     
  - 관리자용 웹사이트(당직계통)
  
