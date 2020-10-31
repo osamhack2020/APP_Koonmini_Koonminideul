@@ -103,7 +103,7 @@
 									</span>
 									<div class="dash-widget-info">
 										<h3>{{number.userNull}}</h3>
-										<h6 class="text-muted">기기 미등록</h6>
+										<h6 class="text-muted">미등록 단말기</h6>
 									</div>
 								</div>
 							</div>
@@ -126,8 +126,8 @@
 											<tr>
 												<th>이름</th>
 												<th>소속 중대</th>
-												<th>접속여부</th>
-												<th>출타여부</th>
+												<th>접속 여부</th>
+												<th>출타 여부</th>
 												<th>최근 접속일</th>
 											</tr>
 										</thead>
@@ -140,7 +140,7 @@
 												<td>{{ user.dataValues.company }}</td>
 												<td>
 													{% if user.dataValues.locked === null %}
-													<span class="badge badge-danger">기기 미등록</span>
+													<span class="badge badge-danger">미등록 단말기</span>
 													{% elif user.dataValues.locked %}
 													<span class="badge badge-dark">오프라인</span>
 													{% else %}

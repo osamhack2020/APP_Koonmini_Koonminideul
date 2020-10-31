@@ -85,7 +85,7 @@
 								</div>
 								<div class="col-sm-6 col-md-3">
 									<div class="form-group">
-										<button class="btn btn-primary btn-block" type="submit">검색하기</button>
+										<button class="btn btn-primary btn-block" type="submit">검색하기(기능 구현 예정)</button>
 									</div>
 								</div>
 							</div>
@@ -95,24 +95,21 @@
 				<!-- /Search Filter -->
 				
 				<ul class="nav nav-tabs menu-tabs">
-					<li class="nav-item">
-						<a class="nav-link" href="/total-report.html">전체보기 <span class="badge badge-primary">550</span></a>
-					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="/pending-report.html">온라인 <span class="badge badge-primary">125</span></a>
+						<a class="nav-link" href="/manage/user">전체보기 <span class="badge badge-primary">{{number.userAll}}</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/inprogress-report.html">오프라인 <span class="badge badge-primary">86</span></a>
+						<a class="nav-link" href="/manage/user">온라인 <span class="badge badge-primary">{{number.userOn}}</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/complete-report.html">기기등록 <span class="badge badge-primary">89</span></a>
+						<a class="nav-link" href="/manage/user">오프라인 <span class="badge badge-primary">{{number.userOff}}</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/reject-report.html">기기미등록 <span class="badge badge-primary">101</span></a>
+						<a class="nav-link" href="/manage/user">등록된 단말기 <span class="badge badge-primary">{{number.userNotNull}}</span></a>
 					</li>
-					<!--<li class="nav-item">
-						<a class="nav-link" href="cancel-report.html">Canceled <span class="badge badge-primary">121</span></a>
-					</li>-->
+					<li class="nav-item">
+						<a class="nav-link" href="/manage/user">미등록 단말기<span class="badge badge-primary">{{number.userNull}}</span></a>
+					</li>
 				</ul>
 				
 				<div class="row">
@@ -124,276 +121,43 @@
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Date</th>
-												<th>User</th>
-												<th>Provider</th>
-												<th>Service</th>
-												<th>Amount</th>
-												<th>Status</th>
-												<th>Updated</th>
+												<th>이름</th>
+												<th>소속 중대</th>
+												<th>출타 여부</th>
+												<th>전화 번호</th>
+												<th>비상 연락망</th>
+												<th>접속 여부</th>
+												<th>최근 접속일</th>
 											</tr>
 										</thead>
 										<tbody>
+											{% for user in arr %}
 											<tr>
-												<td>1</td>
-												<td>15 Sep 2020</td>
+												<td>{{ user.dataValues.id }}</td>
 												<td>
 													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-02.jpg">
 														</a>
-														<a href="javascript:void(0);">Nancy Olson</a>
+														<a href="javascript:void(0);">{{ user.dataValues.name }}</a>
 													</span>
 												</td>
+												<td>{{ user.dataValues.company }}</td>
+												<td>{{ user.dataValues.state }}</td>
+												<td>{{ user.dataValues.phone_number }}</td>
+												<td>{{ user.dataValues.contact_number }}</td>
 												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-02.jpg">
-														</a>
-														<a href="javascript:void(0);">Matthew Garcia</a>
-													</span>
+													{% if user.dataValues.locked === null %}
+													<span class="badge badge-danger">미등록 단말기</span>
+													{% elif user.dataValues.locked %}
+													<span class="badge badge-dark">오프라인</span>
+													{% else %}
+													<span class="badge badge-primary">온라인</span>
+													{% endif %}
 												</td>
-												<td>Car Repair Services</td>
-												<td>$50</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Yesterday 01:35 PM</td>
+												<td>{{ user.dataValues.date }}</td>
 											</tr>
-											<tr>
-												<td>2</td>
-												<td>14 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-03.jpg">
-														</a>
-														<a href="javascript:void(0);">Ramona Kingsley</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-03.jpg">
-														</a>
-														<a href="javascript:void(0);">Yolanda Potter</a>
-													</span>
-												</td>
-												<td>Electric Panel Repairing Service</td>
-												<td>$45</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Yesterday 01:31 PM</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>13 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-04.jpg">
-														</a>
-														<a href="javascript:void(0);">Ricardo Lung</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-04.jpg">
-														</a>
-														<a href="javascript:void(0);">Ricardo Flemings</a>
-													</span>
-												</td>
-												<td>Steam Car Wash</td>
-												<td>$14</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Yesterday 01:29 PM</td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td>12 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-05.jpg">
-														</a>
-														<a href="javascript:void(0);">Annette Silva</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-05.jpg">
-														</a>
-														<a href="javascript:void(0);">Maritza Wasson</a>
-													</span>
-												</td>
-												<td>House Cleaning Services</td>
-												<td>$100</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Yesterday 01:21 PM</td>
-											</tr>
-											<tr>
-												<td>5</td>
-												<td>11 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-06.jpg">
-														</a>
-														<a href="javascript:void(0);">Stephen Wilson</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-06.jpg">
-														</a>
-														<a href="javascript:void(0);">Marya Ruiz</a>
-													</span>
-												</td>
-												<td>Computer & Server AMC Service</td>
-												<td>$80</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Yesterday 01:03 PM</td>
-											</tr>
-											<tr>
-												<td>6</td>
-												<td>10 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-07.jpg">
-														</a>
-														<a href="javascript:void(0);">Ryan Rodriguez</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-07.jpg">
-														</a>
-														<a href="javascript:void(0);">Richard Hughes</a>
-													</span>
-												</td>
-												<td>Interior Designing</td>
-												<td>$5</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>10 Sep 2020 08:03 PM</td>
-											</tr>
-											<tr>
-												<td>7</td>
-												<td>9 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-08.jpg">
-														</a>
-														<a href="javascript:void(0);">Lucile Devera</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-08.jpg">
-														</a>
-														<a href="javascript:void(0);">Nina Wilson</a>
-													</span>
-												</td>
-												<td>Building Construction Services</td>
-												<td>$75</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>9 Sep 2020 09:38 PM</td>
-											</tr>
-											<tr>
-												<td>8</td>
-												<td>8 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-09.jpg">
-														</a>
-														<a href="javascript:void(0);">Roland Storey</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-09.jpg">
-														</a>
-														<a href="javascript:void(0);">David Morrison</a>
-													</span>
-												</td>
-												<td>Commercial Painting Services</td>
-												<td>$500</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>8 Sep 2020 09:37 PM</td>
-											</tr>
-											<tr>
-												<td>9</td>
-												<td>7 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-10.jpg">
-														</a>
-														<a href="javascript:void(0);">Lindsey Parmley</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-10.jpg">
-														</a>
-														<a href="javascript:void(0);">Linda Brooks</a>
-													</span>
-												</td>
-												<td>Plumbing Services</td>
-												<td>$150</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>7 Sep 2020 06:27 PM</td>
-											</tr>
-											<tr>
-												<td>10</td>
-												<td>6 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-01.jpg">
-														</a>
-														<a href="javascript:void(0);">Jeffrey Akridge</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-01.jpg">
-														</a>
-														<a href="javascript:void(0);">Thomas Herzberg</a>
-													</span>
-												</td>
-												<td>Toughened Glass Fitting Services</td>
-												<td>$25</td>
-												<td>
-													<label class="badge badge-dark">Pending</label>
-												</td>
-												<td>Today 01:38 PM</td>
-											</tr>
+											{% endfor %}
 										</tbody>
 									</table>
 								</div>
