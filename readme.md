@@ -7,7 +7,7 @@
  
 
 ## 프로젝트 발표영상 (Presentation Video)
-[![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://www.youtube.com/watch?time_continue=117&v=LjX3eVQdIyk)
+[![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://youtu.be/Sqp1qpT6wCY)
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
