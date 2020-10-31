@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView2;
 
     public static String deviceId = null;
-    public static Boolean locking = false;
+    public static Boolean locking = true;
     public static String goOut;
 
     @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String urlStr = "http://koonmini.kro.kr:3000/";
+                final String urlStr = "http://koonmini.kro.kr/data";
                 AsyncHttpConn(urlStr);
                 /*new Thread(new Runnable() {
                     @Override
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).start();*/
 
-                locking = true;
+                locking = false;
                 Intent intent = new Intent(getApplicationContext(), LockActivity.class);
                 startActivity(intent);
 

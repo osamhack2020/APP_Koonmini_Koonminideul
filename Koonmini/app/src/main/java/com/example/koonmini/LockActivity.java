@@ -43,7 +43,7 @@ public class LockActivity extends AppCompatActivity {
                 int index = spinner.getSelectedItemPosition();
                 MainActivity.goOut=goOutData[index];
 
-                final String urlStr = "http://koonmini.kro.kr:3000/";
+                final String urlStr = "http://koonmini.kro.kr/data";
                 MainActivity.AsyncHttpConn(urlStr);
                 /*new Thread(new Runnable() {
                     @Override
@@ -52,7 +52,7 @@ public class LockActivity extends AppCompatActivity {
                     }
                 }).start();*/
 
-                MainActivity.locking = false;
+                MainActivity.locking = true;
                 finish();
 
 
