@@ -16,14 +16,17 @@
 	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
-	<!-- Datatables CSS -->
-	<link rel="stylesheet" href="/assets/plugins/datatables/datatables.min.css">
-
 	<!-- Datepicker CSS -->
 	<link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
 
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="/assets/plugins/datatables/datatables.min.css">
+
 	<!-- Animate CSS -->
 	<link rel="stylesheet" href="/assets/css/animate.min.css">
+
+	<!-- Select CSS -->
+	<link rel="stylesheet" href="/assets/css/select2.min.css">
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="/assets/css/admin.css">
@@ -32,17 +35,18 @@
 
 <body>
 	<div class="main-wrapper">
-	
+
 		<!-- Header -->
 		{% include "header.html" %}
 		<!-- /Header -->
-		
+
 		<!-- Sidebar -->
 		{% include "side_bar.html" %}
 		<!-- /Sidebar -->
 		
 		<div class="page-wrapper">
 			<div class="content container-fluid">
+			
 				<!-- Page Header -->
 				<div class="page-header">
 					<div class="row">
@@ -63,15 +67,9 @@
 					<div class="card-body pb-0">
 						<form>
 							<div class="row filter-row">
-								<div class="col-sm-6 col-md-3">
+								 <div class="col-sm-6 col-md-3">
 									<div class="form-group">
-										<label>Provider</label>
-										<input class="form-control" type="text">
-									</div>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<div class="form-group">
-										<label>From Date</label>
+										<label class="col-form-label">From Date</label>
 										<div class="cal-icon">
 											<input class="form-control datetimepicker" type="text">
 										</div>
@@ -79,7 +77,7 @@
 								</div>
 								<div class="col-sm-6 col-md-3">
 									<div class="form-group">
-										<label>To Date</label>
+										<label class="col-form-label">To Date</label>
 										<div class="cal-icon">
 											<input class="form-control datetimepicker" type="text">
 										</div>
@@ -87,7 +85,7 @@
 								</div>
 								<div class="col-sm-6 col-md-3">
 									<div class="form-group">
-										<button class="btn btn-primary btn-block" type="submit">Submit</button>
+										<button class="btn btn-primary btn-block" type="submit">검색하기</button>
 									</div>
 								</div>
 							</div>
@@ -95,6 +93,27 @@
 					</div>
 				</div>
 				<!-- /Search Filter -->
+				
+				<ul class="nav nav-tabs menu-tabs">
+					<li class="nav-item">
+						<a class="nav-link" href="/total-report.html">전체보기 <span class="badge badge-primary">550</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="/pending-report.html">온라인 <span class="badge badge-primary">125</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/inprogress-report.html">오프라인 <span class="badge badge-primary">86</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/complete-report.html">기기등록 <span class="badge badge-primary">89</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/reject-report.html">기기미등록 <span class="badge badge-primary">101</span></a>
+					</li>
+					<!--<li class="nav-item">
+						<a class="nav-link" href="cancel-report.html">Canceled <span class="badge badge-primary">121</span></a>
+					</li>-->
+				</ul>
 				
 				<div class="row">
 					<div class="col-md-12">
@@ -105,163 +124,275 @@
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Provider Name</th>
-												<th>Contact No</th>
-												<th>Email</th>
-												<th>Reg Date</th>
-												<th>Subscription</th>
+												<th>Date</th>
+												<th>User</th>
+												<th>Provider</th>
+												<th>Service</th>
+												<th>Amount</th>
+												<th>Status</th>
+												<th>Updated</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>1</td>
+												<td>15 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-01.jpg">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-02.jpg">
 														</a>
-														<a href="#">Thomas Herzberg</a>
-													</h2>
+														<a href="javascript:void(0);">Nancy Olson</a>
+													</span>
 												</td>
-												<td>832-212-0082</td>
-												<td>thomasherzberg@example.com</td>
-												<td>12 Sep 2020</td>
-												<td>Enterprice</td>
-											</tr>
-											<tr>
-												<td>2</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-02.jpg">
 														</a>
-														<a href="#">Matthew Garcia</a>
-													</h2>
+														<a href="javascript:void(0);">Matthew Garcia</a>
+													</span>
 												</td>
-												<td>918-454-4561</td>
-												<td>matthewgarcia@example.com</td>
-												<td>7 Sep 2020</td>
-												<td>Standard</td>
+												<td>Car Repair Services</td>
+												<td>$50</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Yesterday 01:35 PM</td>
 											</tr>
 											<tr>
-												<td>3</td>
+												<td>2</td>
+												<td>14 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-03.jpg">
+														</a>
+														<a href="javascript:void(0);">Ramona Kingsley</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-03.jpg">
 														</a>
-														<a href="#">Yolanda Potter</a>
-													</h2>
+														<a href="javascript:void(0);">Yolanda Potter</a>
+													</span>
 												</td>
-												<td>360-281-3619</td>
-												<td>yolandapotter@example.com</td>
-												<td>20 Aug 2020</td>
-												<td>Basic</td>
+												<td>Electric Panel Repairing Service</td>
+												<td>$45</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Yesterday 01:31 PM</td>
 											</tr>
 											<tr>
-												<td>4</td>
+												<td>3</td>
+												<td>13 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-04.jpg">
+														</a>
+														<a href="javascript:void(0);">Ricardo Lung</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-04.jpg">
 														</a>
-														<a href="#">Ricardo Flemings</a>
-													</h2>
+														<a href="javascript:void(0);">Ricardo Flemings</a>
+													</span>
 												</td>
-												<td>631-374-3243</td>
-												<td>ricardoflemings@example.com</td>
-												<td>15 Aug 2020</td>
-												<td>Standard</td>
+												<td>Steam Car Wash</td>
+												<td>$14</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Yesterday 01:29 PM</td>
 											</tr>
 											<tr>
-												<td>5</td>
+												<td>4</td>
+												<td>12 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-05.jpg">
+														</a>
+														<a href="javascript:void(0);">Annette Silva</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-05.jpg">
 														</a>
-														<a href="#">Maritza Wasson</a>
-													</h2>
+														<a href="javascript:void(0);">Maritza Wasson</a>
+													</span>
 												</td>
-												<td>979-844-9766</td>
-												<td>maritzawasson@example.com</td>
-												<td>1 Aug 2020</td>
-												<td>Basic</td>
+												<td>House Cleaning Services</td>
+												<td>$100</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Yesterday 01:21 PM</td>
 											</tr>
 											<tr>
-												<td>6</td>
+												<td>5</td>
+												<td>11 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-06.jpg">
+														</a>
+														<a href="javascript:void(0);">Stephen Wilson</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-06.jpg">
 														</a>
-														<a href="#">Marya Ruiz</a>
-													</h2>
+														<a href="javascript:void(0);">Marya Ruiz</a>
+													</span>
 												</td>
-												<td>814-537-9709</td>
-												<td>maryaruiz@example.com</td>
-												<td>24 Jul 2020</td>
-												<td>Enterprice</td>
+												<td>Computer & Server AMC Service</td>
+												<td>$80</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Yesterday 01:03 PM</td>
 											</tr>
 											<tr>
-												<td>7</td>
+												<td>6</td>
+												<td>10 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-07.jpg">
+														</a>
+														<a href="javascript:void(0);">Ryan Rodriguez</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-07.jpg">
 														</a>
-														<a href="#">Richard Hughes</a>
-													</h2>
+														<a href="javascript:void(0);">Richard Hughes</a>
+													</span>
 												</td>
-												<td>937-846-6789</td>
-												<td>richardhughes@example.com</td>
-												<td>21 Jul 2020</td>
-												<td>Standard</td>
+												<td>Interior Designing</td>
+												<td>$5</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>10 Sep 2020 08:03 PM</td>
 											</tr>
 											<tr>
-												<td>8</td>
+												<td>7</td>
+												<td>9 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-08.jpg">
+														</a>
+														<a href="javascript:void(0);">Lucile Devera</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-08.jpg">
 														</a>
-														<a href="#">Nina Wilson</a>
-													</h2>
+														<a href="javascript:void(0);">Nina Wilson</a>
+													</span>
 												</td>
-												<td>419-523-6835</td>
-												<td>ninawilson@example.com</td>
-												<td>7 Jul 2020</td>
-												<td>Basic</td>
+												<td>Building Construction Services</td>
+												<td>$75</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>9 Sep 2020 09:38 PM</td>
 											</tr>
 											<tr>
-												<td>9</td>
+												<td>8</td>
+												<td>8 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-09.jpg">
+														</a>
+														<a href="javascript:void(0);">Roland Storey</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-09.jpg">
 														</a>
-														<a href="#">David Morrison</a>
-													</h2>
+														<a href="javascript:void(0);">David Morrison</a>
+													</span>
 												</td>
-												<td>703-214-9351</td>
-												<td>davidmorrison@example.com</td>
-												<td>30 Jun 2020</td>
-												<td>Enterprice</td>
+												<td>Commercial Painting Services</td>
+												<td>$500</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>8 Sep 2020 09:37 PM</td>
 											</tr>
 											<tr>
-												<td>10</td>
+												<td>9</td>
+												<td>7 Sep 2020</td>
 												<td>
-													<h2 class="table-avatar">
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-10.jpg">
+														</a>
+														<a href="javascript:void(0);">Lindsey Parmley</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
 														<a href="#" class="avatar avatar-sm mr-2">
 															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-10.jpg">
 														</a>
-														<a href="#">Linda Brooks</a>
-													</h2>
+														<a href="javascript:void(0);">Linda Brooks</a>
+													</span>
 												</td>
-												<td>512-243-2686</td>
-												<td>lindabrooks@example.com</td>
-												<td>28 Jun 2020</td>
-												<td>Basic</td>
+												<td>Plumbing Services</td>
+												<td>$150</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>7 Sep 2020 06:27 PM</td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>6 Sep 2020</td>
+												<td>
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-01.jpg">
+														</a>
+														<a href="javascript:void(0);">Jeffrey Akridge</a>
+													</span>
+												</td>
+												<td>
+													<span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-01.jpg">
+														</a>
+														<a href="javascript:void(0);">Thomas Herzberg</a>
+													</span>
+												</td>
+												<td>Toughened Glass Fitting Services</td>
+												<td>$25</td>
+												<td>
+													<label class="badge badge-dark">Pending</label>
+												</td>
+												<td>Today 01:38 PM</td>
 											</tr>
 										</tbody>
 									</table>
@@ -289,7 +420,11 @@
 	<script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 	<!-- Datatables JS -->
+	<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
 	<script src="/assets/plugins/datatables/datatables.min.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/assets/js/select2.min.js"></script>
 
 	<!-- Custom JS -->
 	<script src="/assets/js/admin.js"></script>

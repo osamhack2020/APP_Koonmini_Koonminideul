@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { User } = require('../models');
+const { Admin, User } = require('../models');
+
+
+router.use((req, res, next) => {
+    res.locals.admin = req.user;
+    next();
+});
 
 
 /* GET, POST add/user page. */
@@ -20,7 +26,7 @@ router
         // console.log(req.body);
         // const rb = req.body;
         User.create({
-            admin: 0,
+            admin: res.locals.admin.id,
             name: req.body.name,
             service_number: req.body.service_number,
             company: req.body.company,
@@ -30,8 +36,7 @@ router
             registration_number: req.body.registration_number,
             device_id: req.body.device_id,
         });
-
-        res.redirect('/manage/user');
+        res.redirect('/');
     });
 
 module.exports = router;

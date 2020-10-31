@@ -54,10 +54,10 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<span class="dash-widget-icon bg-primary">
-										<i class="far fa-user"></i>
+										<i class="fas fa-user-friends"></i>
 									</span>
 									<div class="dash-widget-info">
-										<h3>429</h3>
+										<h3>{{number.userAll}}</h3>
 										<h6 class="text-muted">전체 사용자</h6>
 									</div>
 								</div>
@@ -69,25 +69,10 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<span class="dash-widget-icon bg-primary">
-										<i class="fas fa-user-shield"></i>
+										<i class="fas fa-user-check"></i>
 									</span>
 									<div class="dash-widget-info">
-										<h3>148</h3>
-										<h6 class="text-muted">전체 관리자</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
-						<div class="card">
-							<div class="card-body">
-								<div class="dash-widget-header">
-									<span class="dash-widget-icon bg-primary">
-										<i class="fas fa-qrcode"></i>
-									</span>
-									<div class="dash-widget-info">
-										<h3>124</h3>
+										<h3>{{number.userOn}}</h3>
 										<h6 class="text-muted">온라인</h6>
 									</div>
 								</div>
@@ -99,11 +84,26 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<span class="dash-widget-icon bg-primary">
-										<i class="far fa-credit-card"></i>
+										<i class="fas fa-user-lock"></i>
 									</span>
 									<div class="dash-widget-info">
-										<h3>11378</h3>
+										<h3>{{number.userOff}}</h3>
 										<h6 class="text-muted">오프라인</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="dash-widget-header">
+									<span class="dash-widget-icon bg-primary">
+										<i class="fas fa-user-edit"></i>
+									</span>
+									<div class="dash-widget-info">
+										<h3>{{number.userNull}}</h3>
+										<h6 class="text-muted">기기 미등록</h6>
 									</div>
 								</div>
 							</div>
@@ -111,245 +111,55 @@
 					</div>
 				</div>
 				<div class="row">
+					{% for str, arr in array %}
 					<div class="col-md-6 d-flex">
 					
 						<!-- Recent Bookings -->
 						<div class="card card-table flex-fill">
 							<div class="card-header">
-								<h4 class="card-title">Recent Bookings</h4>
+								<h4 class="card-title">{{str}}</h4>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-center">
 										<thead>
 											<tr>
-												<th>Customer</th>
-												<th>Date</th>
-												<th>Service</th>
-												<th>Status</th>
-												<th>Price</th>
+												<th>이름</th>
+												<th>소속 중대</th>
+												<th>접속여부</th>
+												<th>출타여부</th>
+												<th>최근 접속일</th>
 											</tr>
 										</thead>
 										<tbody>
+											{% for user in arr %}
 											<tr>
 												<td class="text-nowrap">
-													<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-05.jpg" alt="User Image"> Annette Silva
+												<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-05.jpg" alt="User Image"> {{ user.dataValues.name }}
 												</td>
-												<td class="text-nowrap">9 Sep 2020</td>
-												<td>Car Repair Services</td>
+												<td>{{ user.dataValues.company }}</td>
 												<td>
-													<span class="badge bg-danger inv-badge">Pending</span>
+													{% if user.dataValues.locked === null %}
+													<span class="badge badge-danger">기기 미등록</span>
+													{% elif user.dataValues.locked %}
+													<span class="badge badge-dark">오프라인</span>
+													{% else %}
+													<span class="badge badge-primary">온라인</span>
+													{% endif %}
 												</td>
-												<td>
-													<div class="font-weight-600">$50</div>
+												<td>{{ user.dataValues.state }}</td>
+												<td class="text-nowrap">{{ user.dataValues.date }}</td>
+													<div class="font-weight-600"></div>
 												</td>
 											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-06.jpg" alt="User Image"> Stephen Wilson</td>
-												<td class="text-nowrap">8 Sep 2020</td>
-												<td>Steam Car Wash</td>
-												<td>
-													<span class="badge bg-danger inv-badge">Pending</span>
-												</td>
-												<td>
-													<div class="font-weight-600">$14</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-07.jpg" alt="User Image"> Ryan Rodriguez</td>
-												<td class="text-nowrap">7 Sep 2020</td>
-												<td>House Cleaning Services</td>
-												<td>
-													<span class="badge bg-danger inv-badge">Pending</span>
-												</td>
-												<td>
-													<div class="font-weight-600">$100</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-08.jpg" alt="User Image"> Lucile Devera
-												</td>
-												<td class="text-nowrap">6 Sep 2020</td>
-												<td>Interior Designing</td>
-												<td>
-													<span class="badge bg-danger inv-badge">Pending</span>
-												</td>
-												<td>
-													<div class="font-weight-600">$5</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<img class="avatar-xs rounded-circle" src="/assets/img/customer/user-09.jpg" alt="User Image"> Roland Storey</td>
-												<td class="text-nowrap">5 Sep 2020</td>
-												<td>Plumbing Services</td>
-												<td>
-													<span class="badge bg-danger inv-badge">Pending</span>
-												</td>
-												<td>
-													<div class="font-weight-600">$150</div>
-												</td>
-											</tr>
+											{% endfor %}
 										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>
-						<!-- /Recent Bookings -->
-						
 					</div>
-					<div class="col-md-6 d-flex">
-					
-						<!-- Payments -->
-						<div class="card card-table flex-fill">
-							<div class="card-header">
-								<h4 class="card-title">Payments</h4>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table table-center">
-										<thead>
-											<tr>
-												<th>Date</th>
-												<th>User</th>
-												<th>Provider</th>
-												<th>Service</th>
-												<th>Amount</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>15 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-02.jpg">
-														</a>
-														<a href="javascript:void(0);">Nancy Olson</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-02.jpg">
-														</a>
-														<a href="javascript:void(0);">Matthew Garcia</a>
-													</span>
-												</td>
-												<td>Car Repair Services</td>
-												<td>$50</td>
-												<td>
-													<span class="badge badge-dark">Pending</span>
-												</td>
-											</tr>
-											<tr>
-												<td>14 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-03.jpg">
-														</a>
-														<a href="javascript:void(0);">Ramona Kingsley</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-03.jpg">
-														</a>
-														<a href="javascript:void(0);">Yolanda Potter</a>
-													</span>
-												</td>
-												<td>Electric Panel Repairing Service</td>
-												<td>$45</td>
-												<td>
-													<span class="badge badge-dark">Pending</span>
-												</td>
-											</tr>
-											<tr>
-												<td>13 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-04.jpg">
-														</a>
-														<a href="javascript:void(0);">Ricardo Lung</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-04.jpg">
-														</a>
-														<a href="javascript:void(0);">Ricardo Flemings</a>
-													</span>
-												</td>
-												<td>Steam Car Wash</td>
-												<td>$14</td>
-												<td>
-													<span class="badge badge-dark">Pending</span>
-												</td>
-											</tr>
-											<tr>
-												<td>12 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-05.jpg">
-														</a>
-														<a href="javascript:void(0);">Annette Silva</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-05.jpg">
-														</a>
-														<a href="javascript:void(0);">Maritza Wasson</a>
-													</span>
-												</td>
-												<td>House Cleaning Services</td>
-												<td>$100</td>
-												<td>
-													<span class="badge badge-dark">Pending</span>
-												</td>
-											</tr>
-											<tr>
-												<td>11 Sep 2020</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/customer/user-06.jpg">
-														</a>
-														<a href="javascript:void(0);">Stephen Wilson</a>
-													</span>
-												</td>
-												<td>
-													<span class="table-avatar">
-														<a href="#" class="avatar avatar-xs mr-2">
-															<img class="avatar-img rounded-circle" alt="" src="/assets/img/provider/provider-06.jpg">
-														</a>
-														<a href="javascript:void(0);">Marya Ruiz</a>
-													</span>
-												</td>
-												<td>Computer & Server AMC Service</td>
-												<td>$80</td>
-												<td>
-													<span class="badge badge-info">Inprogress</span>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<!-- Payments -->
-						
-					</div>
+					{% endfor %}
 				</div> 
 			</div>
 		</div> 
