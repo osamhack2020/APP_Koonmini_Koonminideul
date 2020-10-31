@@ -94,6 +94,8 @@ mysql> desc admins;
 5 rows in set (0.00 sec)
 */
 ```
+
+```
 # 서버 실행은 아래의 코드로 진행 됩니다.
 $ npm start
 
