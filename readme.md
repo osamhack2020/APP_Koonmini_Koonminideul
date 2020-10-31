@@ -78,7 +78,7 @@ $ sudo mysql_secure_installation
 # mysql의 데이터베이스와 테이블 형식은 server/models/의 파일들의
 # 코드 밑 부분에 주석으로 쿼리 데이터 형식을 적어두었습니다.
 # ex) admins table
-
+```
 ```javascript
 /*
 mysql> desc admins;
