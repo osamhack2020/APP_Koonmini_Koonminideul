@@ -6,8 +6,10 @@
  군미니는 스마트폰 비대면 반납 앱으로써 스마트폰의 홈화면을 잠그고 푸는 것을 통해 스마트폰을 반납하고 불출 받습니다. 또한, 앱의 반납과 불출 기능을 사용할 때 디바이스의 정보를 서버에 전송하도록 하여, 웹페이지를 통해 한 눈에 병사들의 스마트폰 사용 현황을 보고 관리할 수 있도록 관리자(당직계통)를 위한 서비스를 제공합니다.
  
 
+## 프로젝트 시연 영상
+[![](https://youtu.be/Sqp1qpT6wCY)]
 ## 프로젝트 발표영상 (Presentation Video)
-[![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://youtu.be/Sqp1qpT6wCY)
+[![Watch the video]](https://youtu.be/RYGvtKITEl4)
 
 ## 프로젝트 사용법 (Getting Started)
  - 사용자용 앱(병사)  
