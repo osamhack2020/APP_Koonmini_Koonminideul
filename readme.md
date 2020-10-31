@@ -24,6 +24,7 @@
 
 
 ## 기능 설계 (Function Design)
+![](./img/FuntionDesign1.png)
 
 ## 버전 업데이트시 추가할 기능 (Next Update)
 - 유동병력 관제  
