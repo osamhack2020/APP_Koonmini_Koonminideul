@@ -47,8 +47,8 @@ $ touch .env
 
 ```
 # 그 후 .env에 아래 설정을 적어주면 됩니다.
-COOKIE_SECRET=
-SEQUELIZE_PASSWORD=''
+COOKIE_SECRET=원하시는 것
+SEQUELIZE_PASSWORD='원하시는 것'
 ```
 
 ```
