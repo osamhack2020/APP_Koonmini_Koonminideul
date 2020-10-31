@@ -18,6 +18,23 @@
   1. Receive 버튼을 누르면 화면잠금이 풀린다.  
     
  - 관리자용 웹사이트(당직계통)
+ 
+ 서버 설치 요령 - Ubuntu 환경을 기준으로 설명드립니다.
+```
+# 군미니의 깃허브를 clone 합니다. 
+$ git clone https://github.com/osamhack2020/APP_Koonmini_Koonminideul.git
+
+# 군미니 프로젝트 폴더로 이동 후 npm(Node.js package manager)을 설치합니다. 
+$ sudo apt install npm
+
+# 군미니 프로젝트의 server 폴더로 이동한 후, npm을 이용해 모듈을 다운받습니다.
+$ cd ./server
+$ npm i or npm install
+
+
+```
+
+
   1. 사이트에 접속을 한다.
   1. 계정관리 메뉴에서 회원가입 페이지에 들어가 회원가입을 하고 로그인을 한다.  ![](./img/p5.png) ![](./img/p4.png)
   1. 사용자 추가를 눌러서 사용자(병사)의 정보를 입력한다. 이때 단말 아이디는 군미니 앱을 실행기키면 상단에 나오는 문자열을 사용한다.  ![](./img/p3.png)
